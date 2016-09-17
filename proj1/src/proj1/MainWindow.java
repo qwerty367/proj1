@@ -2,11 +2,10 @@ package proj1;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class MainWindow extends JFrame {
 	JButton jButton1 = new JButton();
-	JPanel jPanel = new JPanel();
+	PlayButtonListener playButtonListener = new PlayButtonListener(this);
 
 	MainWindow() {
 		jButton1.setText("Play");
@@ -15,11 +14,13 @@ public class MainWindow extends JFrame {
 		this.setSize(500, 500);
 		this.setResizable(false);
 		this.setLayout(null);
-		jPanel.setLayout(null);
-		jPanel.setBounds(0, 0, 500, 500);
+		MenuPanel menuPanel = new MenuPanel();
+		menuPanel.setBounds(0, 0, 500, 500);
+		menuPanel.setLayout(null);
 		jButton1.setBounds(215, 205, 70, 30);
-		this.add(jPanel);
-		jPanel.add(jButton1);
+		menuPanel.add(jButton1);
+		jButton1.addActionListener(playButtonListener);
+		this.add(menuPanel);
 
 	}
 }
