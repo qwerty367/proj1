@@ -3,18 +3,18 @@ package proj1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PlayButtonListener implements ActionListener {
+public class BackButtonListener implements ActionListener {
 	private MainWindow mainWindow;
 
-	PlayButtonListener(MainWindow mainWindow) {
+	BackButtonListener(MainWindow mainWindow) {
 		this.mainWindow = mainWindow;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		PlayPanel playPanel = new PlayPanel(mainWindow);
+		MenuPanel menuPanel = new MenuPanel(mainWindow);
 		mainWindow.getContentPane().removeAll();
-		mainWindow.add(playPanel);
+		mainWindow.add(menuPanel);
 		mainWindow.repaint();
 	}
 

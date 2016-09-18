@@ -1,8 +1,21 @@
 package proj1;
 
 import java.awt.Graphics;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Enemy extends Player {
+	Enemy() {
+		this.setBounds(300, 0, 200, 330);
+		try {
+			this.setImage(ImageIO.read(new File("3.png")));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

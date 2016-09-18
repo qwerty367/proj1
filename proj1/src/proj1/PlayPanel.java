@@ -9,26 +9,30 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class MenuPanel extends JPanel {
-	JButton playButton = new JButton();
+public class PlayPanel extends JPanel {
+	JButton backButton = new JButton();
 	private MainWindow mainWindow;
 
-	MenuPanel(MainWindow mainWindow) {
+	PlayPanel(MainWindow mainWindow) {
 		this.mainWindow = mainWindow;
-		PlayButtonListener playButtonListener = new PlayButtonListener(mainWindow);
-		playButton.setText("Play");
-		playButton.setBounds(215, 205, 70, 30);
-		playButton.addActionListener(playButtonListener);
-		this.add(playButton);
-
+		BackButtonListener backButtonListener = new BackButtonListener(mainWindow);
+		backButton.setText("Back");
+		backButton.setBounds(215, 205, 70, 30);
+		backButton.addActionListener(backButtonListener);
+		this.add(backButton);
 		this.setBounds(0, 0, 500, 500);
 		this.setLayout(null);
 
 		try {
-			this.setImage(ImageIO.read(new File("skull.jpg")));
+			this.setImage(ImageIO.read(new File("0.jpg")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		Player player = new Player();
+		this.add(player);
+		Enemy enemy = new Enemy();
+		this.add(enemy);
 
 	}
 
