@@ -7,8 +7,8 @@ import java.awt.Rectangle;
 import javax.swing.JPanel;
 
 public class Player extends JPanel {
-	private int hp = 100;
-	private Image image;
+	protected int hp = 100;
+	protected Image image;
 	private Rectangle hpBar;
 
 	public int getHp() {
@@ -39,8 +39,8 @@ public class Player extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if (image != null)
-			g.drawImage(image, 0, 50, getWidth(), getHeight(), null);
-		g.fillRect(20, 20, hp * 2, 20);
+			g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+		g.fillRect(0, 0, hp * 2, 20);
 	}
 
 }

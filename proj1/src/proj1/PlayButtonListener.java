@@ -28,6 +28,18 @@ public class PlayButtonListener implements ActionListener {
 			e1.printStackTrace();
 		}
 		mainWindow.add(player);
+
+		Enemy enemy = new Enemy();
+		enemy.setBounds(300, 0, 200, 330);
+		enemy.setLayout(null);
+
+		try {
+			enemy.setImage(ImageIO.read(new File("3.png")));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		mainWindow.add(enemy);
+
 		mainWindow.repaint();
 	}
 
