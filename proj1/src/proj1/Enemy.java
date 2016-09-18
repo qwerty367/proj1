@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 
 public class Enemy extends Player {
 	Enemy() {
-		this.setBounds(300, 0, 200, 330);
+		this.setBounds(280, 0, 200, 330);
 		try {
 			this.setImage(ImageIO.read(new File("3.png")));
 		} catch (IOException e1) {
@@ -22,5 +22,6 @@ public class Enemy extends Player {
 		if (image != null)
 			g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 		g.fillRect(0, 0, hp * 2, 20);
+		System.out.println("repaint " + hp);
 	}
 }

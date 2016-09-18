@@ -11,15 +11,25 @@ import javax.swing.JPanel;
 
 public class PlayPanel extends JPanel {
 	JButton backButton = new JButton();
+	JButton strikeButton = new JButton();
 	private MainWindow mainWindow;
 
 	PlayPanel(MainWindow mainWindow) {
+		Player player = new Player();
+		Enemy enemy = new Enemy();
 		this.mainWindow = mainWindow;
 		BackButtonListener backButtonListener = new BackButtonListener(mainWindow);
 		backButton.setText("Back");
 		backButton.setBounds(215, 205, 70, 30);
 		backButton.addActionListener(backButtonListener);
 		this.add(backButton);
+
+		StrikeButtonListener strikeButtonListener = new StrikeButtonListener(enemy);
+		strikeButton.setText("Strike");
+		strikeButton.setBounds(215, 170, 70, 30);
+		strikeButton.addActionListener(strikeButtonListener);
+		this.add(strikeButton);
+
 		this.setBounds(0, 0, 500, 500);
 		this.setLayout(null);
 
@@ -29,9 +39,7 @@ public class PlayPanel extends JPanel {
 			e.printStackTrace();
 		}
 
-		Player player = new Player();
 		this.add(player);
-		Enemy enemy = new Enemy();
 		this.add(enemy);
 
 	}

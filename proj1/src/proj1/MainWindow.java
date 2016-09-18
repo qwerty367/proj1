@@ -3,8 +3,6 @@ package proj1;
 import javax.swing.JFrame;
 
 public class MainWindow extends JFrame {
-	// JButton jButton1 = new JButton();
-	// PlayButtonListener playButtonListener = new PlayButtonListener(this);
 
 	MainWindow() {
 		MenuPanel menuPanel = new MenuPanel(this);
