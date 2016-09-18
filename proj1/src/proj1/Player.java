@@ -49,6 +49,11 @@ public class Player extends JPanel {
 		this.image = image;
 	}
 
+	public void takeDamage(Player attacker) {
+		hp = (int) (hp - Math.random() * 10);
+		repaint();
+	}
+
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

@@ -24,7 +24,7 @@ public class PlayPanel extends JPanel {
 		backButton.addActionListener(backButtonListener);
 		this.add(backButton);
 
-		StrikeButtonListener strikeButtonListener = new StrikeButtonListener(enemy);
+		StrikeButtonListener strikeButtonListener = new StrikeButtonListener(enemy, player);
 		strikeButton.setText("Strike");
 		strikeButton.setBounds(215, 170, 70, 30);
 		strikeButton.addActionListener(strikeButtonListener);

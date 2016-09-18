@@ -5,16 +5,16 @@ import java.awt.event.ActionListener;
 
 public class StrikeButtonListener implements ActionListener {
 	private Enemy enemy;
+	private Player player;
 
-	StrikeButtonListener(Enemy enemy) {
+	StrikeButtonListener(Enemy enemy, Player player) {
 		this.enemy = enemy;
+		this.player = player;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		enemy.hp = enemy.hp - 10;
-		System.out.println(enemy.hp);
-		enemy.repaint();
+		enemy.takeDamage(player);
 	}
 
 }
